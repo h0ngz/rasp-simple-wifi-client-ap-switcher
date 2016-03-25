@@ -74,7 +74,8 @@ echo "Configuring interfaces"
 cp ./config-files/interfaces /etc/network
 cp ./config-files/interfaces.ap /etc/network
 cp ./config-files/interfaces.client /etc/network
-cp ./config-files/wpa supplicant.conf /etc/wpa supplicant/wpa supplicant.conf
+cp ./config-files/wpa_supplicant.conf /etc/wpa supplicant/wpa_supplicant.conf
+chmod 444 /etc/wpa supplicant/wpa_supplicant.conf
 
 echo "Configuring hostapd"
 cp ./config-files/hostapd.conf /etc/hostapd
@@ -111,6 +112,9 @@ service udhcpd start
 update-rc.d udhcpd enable
 
     
+chmod 755 wifiApMode
+chmod 755 wifiClientMode
+
 echo "================================================================"
 echo "=================== Configuration complete! ===================="
 echo "================================================================"
