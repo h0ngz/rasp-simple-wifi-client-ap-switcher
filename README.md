@@ -3,10 +3,21 @@
 ## Install
 
 ```sh
-$git clone git@github.com:sabhiram/raspberry-wifi-conf.git
-$cd raspberry-wifi-conf
-$npm update
-$bower install
-$sudo npm run-script provision
-$sudo npm start
+$git clone https://github.com/h0ngz/rasp-simple-wifi-client-ap-switcher.git
+$cd rasp-simple-wifi-client-ap-switcher
+$sudo ./install
+```
+
+
+## Client MODE
+```sh
+$cd rasp-simple-wifi-client-ap-switcher 
+$sudo ./wifiClientMode
+```
+
+
+## Ap Mode Again
+```sh
+$cd rasp-simple-wifi-client-ap-switcher 
+$sudo ./wifiApMode
 ```
