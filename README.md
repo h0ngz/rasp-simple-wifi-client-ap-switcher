@@ -1,4 +1,5 @@
 # raspberry-wifi-conf
+This Project make only for my raspberry pi. after custom, if you want to use  
 
 ## Install
 
