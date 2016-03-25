@@ -1,0 +1,24 @@
+#!/bin/sh
+
+echo "======================================================="
+echo "======== Setting up Raspberry Pi WiFi AP Mode ========="
+echo "======================================================="
+
+ifdown wlan0 2>&1 >/dev/null
+cp /etc/network/interfaces.ap /etc/network/interfaces
+ifup wlan0 2>&1 >/dev/null
+/etc/init.d/udhcpd start 2>&1 >/dev/null
+/etc/init.d/hostapd start 2>&1 >/dev/null
+/usr/local/sbin/settables 2>&1 >/dev/null
+
+echo "================================================================"
+echo "=================== Configuration complete! ===================="
+echo "================================================================"
+
+echo "+++++++++++++++++  REBOOTING in 5 SECONDS  ++++++++++++++++++++"
+echo "++++++++++++++++++++++ CTL-C to cancel ++++++++++++++++++++++++"
+
+sleep 5
+reboot
+
+exit 0

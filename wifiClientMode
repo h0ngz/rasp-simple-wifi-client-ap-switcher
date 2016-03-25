@@ -1,0 +1,23 @@
+#!/bin/sh
+
+echo "======================================================="
+echo "====== Setting up Raspberry Pi WiFi Client Mode ======="
+echo "======================================================="
+
+/etc/init.d/hostapd stop 2>&1 >/dev/null
+/etc/init.d/udhcpd stop 2>&1 >/dev/null
+ifdown wlan0 2>&1 >/dev/null
+cp /etc/network/interfaces.client /etc/network/interfaces
+ifup wlan0 2>&1 >/dev/null
+
+echo "================================================================"
+echo "=================== Configuration complete! ===================="
+echo "================================================================"
+
+echo "+++++++++++++++++  REBOOTING in 5 SECONDS  ++++++++++++++++++++"
+echo "++++++++++++++++++++++ CTL-C to cancel ++++++++++++++++++++++++"
+
+sleep 5
+reboot
+
+exit 0
