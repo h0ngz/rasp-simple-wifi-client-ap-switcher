@@ -8,18 +8,18 @@ echo "======================================================="
 #	copy configs to relevant directories
 ####################################################################
 
-echo "Configuring DHCP"
+echo "[1/8] Configuring DHCP"
 cp ./config-files/udhcpd_google.conf /etc/udhcpd.conf
 cp ./config-files/udhcpd /etc/default      
 
-echo "Configuring interfaces"
+echo "[2/8] Configuring interfaces"
 cp ./config-files/interfaces /etc/network
 cp ./config-files/interfaces.ap /etc/network
 cp ./config-files/interfaces.client /etc/network
 cp ./config-files/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
 chmod 444 /etc/wpa_supplicant/wpa_supplicant.conf
 
-echo "Configuring hostapd"
+echo "[3/8] Configuring hostapd"
 cp ./config-files/hostapd.conf /etc/hostapd
 cp ./config-files/hostapd /etc/default
 
@@ -29,26 +29,26 @@ cp ./config-files/hostapd /etc/default
 #############################################################
 
 mv /usr/sbin/hostapd /usr/sbin/hostapd.ORIG
-echo "Adafruit hostapd binary copied"
+echo "[4/8] Adafruit hostapd binary copied"
 cp ./hostapd-adafruit /usr/sbin/hostapd
 cp ./config-files/hostapd-adafruit.conf /etc/hostapd/hostapd.conf
 chmod 755 /usr/sbin/hostapd
 
 
 
-echo "Configuring NAT"
+echo "[5/8] Configuring NAT"
 cp ./config-files/sysctl.conf /etc
 
-echo "Configuring iptables"
+echo "[6/8] Configuring iptables"
 cp ./config-files/iptables.ipv4.nat /etc
 
 touch /var/lib/misc/udhcpd.leases
 
-echo "Initialising access point"
+echo "[7/8] Initialising access point"
 service hostapd start
 update-rc.d hostapd enable
 
-echo "Initialising DHCP server"
+echo "[8/8] Initialising DHCP server"
 service udhcpd start
 update-rc.d udhcpd enable
 
