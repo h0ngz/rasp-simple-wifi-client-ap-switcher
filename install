@@ -97,7 +97,6 @@ echo "Configuring NAT"
 cp ./config-files/sysctl.conf /etc
 
 echo "Configuring iptables"
-read -r -p "Do you require chromecast support for unblock-us? [y/N] " chromecastresponse
 cp ./config-files/iptables.ipv4.nat /etc
 
 
