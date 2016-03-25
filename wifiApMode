@@ -6,10 +6,12 @@ echo "======================================================="
 
 ifdown wlan0 2>&1 >/dev/null
 cp /etc/network/interfaces.ap /etc/network/interfaces
+
 ifup wlan0 2>&1 >/dev/null
 /etc/init.d/udhcpd start 2>&1 >/dev/null
 /etc/init.d/hostapd start 2>&1 >/dev/null
 /usr/local/sbin/settables 2>&1 >/dev/null
+update-rc.d udhcpd enable
 
 echo "================================================================"
 echo "=================== Configuration complete! ===================="

@@ -74,8 +74,8 @@ echo "Configuring interfaces"
 cp ./config-files/interfaces /etc/network
 cp ./config-files/interfaces.ap /etc/network
 cp ./config-files/interfaces.client /etc/network
-cp ./config-files/wpa_supplicant.conf /etc/wpa supplicant/wpa_supplicant.conf
-chmod 444 /etc/wpa supplicant/wpa_supplicant.conf
+cp ./config-files/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf
+chmod 444 /etc/wpa_supplicant/wpa_supplicant.conf
 
 echo "Configuring hostapd"
 cp ./config-files/hostapd.conf /etc/hostapd
@@ -99,7 +99,6 @@ cp ./config-files/sysctl.conf /etc
 
 echo "Configuring iptables"
 cp ./config-files/iptables.ipv4.nat /etc
-
 
 touch /var/lib/misc/udhcpd.leases
 
