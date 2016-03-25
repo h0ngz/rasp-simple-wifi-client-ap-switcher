@@ -4,6 +4,7 @@ echo "======================================================="
 echo "====== Setting up Raspberry Pi WiFi Client Mode ======="
 echo "======================================================="
 
+
 /etc/init.d/hostapd stop 2>&1 >/dev/null
 /etc/init.d/udhcpd stop 2>&1 >/dev/null
 ifdown wlan0 2>&1 >/dev/null
