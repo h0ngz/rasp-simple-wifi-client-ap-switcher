@@ -9,6 +9,7 @@ echo "======================================================="
 /etc/init.d/udhcpd stop 2>&1 >/dev/null
 ifdown wlan0 2>&1 >/dev/null
 update-rc.d -f udhcpd disable
+sudo cp /home/pi/temp-files/wpa_supplicant.conf /etc/wpa_supplicant/wpa_supplicant.conf 
 cp /etc/network/interfaces.client /etc/network/interfaces
 ifup wlan0 2>&1 >/dev/null
 
