@@ -10,6 +10,11 @@ echo "======================================================="
 echo "======== Setting up Raspberry Pi WiFi hotspot ========="
 echo "======================================================="
 
+echo "[0/12] Start up 'node' script copy"
+sudo chmod 755 ./startUp
+sudo cp ./startUp /etc/init.d/startUpNode
+sudo update-rc.d startUpNode defaults
+
 echo "[1/12] Updating package lists"
 
 #apt-get -y -qq update
@@ -116,6 +121,7 @@ update-rc.d udhcpd enable
     
 chmod 755 wifiApMode
 chmod 755 wifiClientMode
+chmod 755 goAP
 
 echo "================================================================"
 echo "=================== Configuration complete! ===================="
