@@ -3,6 +3,9 @@
 
 clear
 
+mkdir /home/pi/temp-files
+echo AP > /home/pi/temp-files/mode
+
 echo "======================================================="
 echo "======== Setting up Raspberry Pi WiFi hotspot ========="
 echo "======================================================="
@@ -104,6 +107,7 @@ touch /var/lib/misc/udhcpd.leases
 echo "[11/12] Initialising access point"
 service hostapd start
 update-rc.d hostapd enable
+
 
 echo "[12/12] Initialising DHCP server"
 service udhcpd start

@@ -1,5 +1,8 @@
 #!/bin/sh
 
+mkdir /home/pi/temp-files
+echo WIFI > /home/pi/temp-files/mode
+
 echo "======================================================="
 echo "====== Setting up Raspberry Pi WiFi Client Mode ======="
 echo "======================================================="

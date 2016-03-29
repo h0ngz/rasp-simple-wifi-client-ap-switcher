@@ -1,4 +1,6 @@
 #!/bin/sh
+mkdir /home/pi/temp-files
+echo AP > /home/pi/temp-files/mode
 
 echo "======================================================="
 echo "======== Setting up Raspberry Pi WiFi AP Mode ========="
