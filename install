@@ -12,7 +12,7 @@ echo "======================================================="
 
 echo "[1/12] Updating package lists"
 
-apt-get -y -qq update
+#apt-get -y -qq update
 
 echo "[2/12] Installing dependencies"
 
