@@ -1,0 +1,2 @@
+#!/bin/bash
+node /home/pi/node/wifi-setting-server/bin/www
