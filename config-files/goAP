@@ -1,0 +1,5 @@
+#!/bin/sh
+
+sudo /home/pi/rasp-simple-wifi-client-ap-switcher/wifiApMode
+
+exit 0
