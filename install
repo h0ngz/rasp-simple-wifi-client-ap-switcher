@@ -11,9 +11,7 @@ echo "======== Setting up Raspberry Pi WiFi hotspot ========="
 echo "======================================================="
 
 echo "[0/12] Start up 'node' script copy"
-sudo chmod 755 ./startUp
-sudo cp ./startUp /etc/init.d/startUpNode
-sudo update-rc.d startUpNode defaults
+sudo cp ./config-files/startup.conf /etc/rc.local   
 
 echo "[1/12] Updating package lists"
 
